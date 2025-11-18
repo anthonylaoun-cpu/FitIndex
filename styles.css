@@ -1,0 +1,366 @@
+diff --git a/styles.css b/styles.css
+new file mode 100644
+index 0000000000000000000000000000000000000000..c0a47ea0543e7c808417d02289fdec3b6083b735
+--- /dev/null
++++ b/styles.css
+@@ -0,0 +1,360 @@
++:root {
++    --bg: #f4f7fb;
++    --white: #ffffff;
++    --text: #0f172a;
++    --muted: #5f6b7a;
++    --primary: #2563eb;
++    --primary-light: #dbeafe;
++    --accent: #14b8a6;
++    --shadow: 0 20px 60px rgba(15, 23, 42, 0.08);
++    font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
++}
++
++* {
++    box-sizing: border-box;
++    margin: 0;
++    padding: 0;
++}
++
++body {
++    background: var(--bg);
++    color: var(--text);
++    line-height: 1.6;
++}
++
++a {
++    color: inherit;
++    text-decoration: none;
++}
++
++header.hero {
++    min-height: 80vh;
++    background: linear-gradient(120deg, rgba(37,99,235,0.08), rgba(14,165,233,0.08));
++    padding: 1.5rem clamp(1rem, 5vw, 5rem) 4rem;
++    position: relative;
++}
++
++.navbar {
++    display: flex;
++    justify-content: space-between;
++    align-items: center;
++    gap: 1rem;
++}
++
++.navbar ul {
++    display: flex;
++    list-style: none;
++    gap: 1.5rem;
++}
++
++.navbar a {
++    font-weight: 500;
++    color: var(--muted);
++}
++
++.navbar a:hover {
++    color: var(--primary);
++}
++
++.logo {
++    font-weight: 700;
++    font-size: 1.2rem;
++}
++
++.menu-toggle {
++    display: none;
++    border: none;
++    background: var(--white);
++    padding: 0.5rem 0.75rem;
++    border-radius: 8px;
++    box-shadow: var(--shadow);
++}
++
++.hero-content {
++    margin-top: 4rem;
++    max-width: 700px;
++}
++
++.hero-content h1 {
++    font-size: clamp(2.5rem, 6vw, 3.5rem);
++    margin-bottom: 1rem;
++}
++
++.hero-content .subtitle {
++    font-size: 1.2rem;
++    color: var(--muted);
++    margin-bottom: 2rem;
++}
++
++.hero .cta {
++    background: var(--primary);
++    color: var(--white);
++    border: none;
++    padding: 0.9rem 1.8rem;
++    border-radius: 999px;
++    font-size: 1rem;
++    cursor: pointer;
++    box-shadow: var(--shadow);
++}
++
++main {
++    padding: 3rem clamp(1rem, 5vw, 5rem) 5rem;
++}
++
++.section {
++    margin-bottom: 2.5rem;
++}
++
++.section h2, .section h3 {
++    margin-bottom: 0.5rem;
++}
++
++.section-lead {
++    color: var(--muted);
++}
++
++.card {
++    background: var(--white);
++    padding: 2rem;
++    border-radius: 24px;
++    box-shadow: var(--shadow);
++}
++
++.form-grid {
++    display: grid;
++    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
++    gap: 1rem;
++    margin-top: 1.5rem;
++}
++
++.form-inline {
++    display: flex;
++    flex-wrap: wrap;
++    gap: 1rem;
++    margin-top: 1rem;
++}
++
++label {
++    font-size: 0.95rem;
++    font-weight: 500;
++    color: var(--muted);
++    display: flex;
++    flex-direction: column;
++    gap: 0.4rem;
++}
++
++input, select, button {
++    font: inherit;
++}
++
++input, select {
++    padding: 0.7rem 0.9rem;
++    border-radius: 12px;
++    border: 1px solid #d1d5db;
++    background: #f8fafc;
++}
++
++button.primary, button.secondary, button.danger {
++    border: none;
++    border-radius: 12px;
++    padding: 0.8rem 1.2rem;
++    font-weight: 600;
++    cursor: pointer;
++    transition: transform 0.2s ease;
++}
++
++button.primary {
++    background: var(--primary);
++    color: var(--white);
++}
++
++button.secondary {
++    background: var(--primary-light);
++    color: var(--primary);
++}
++
++button.danger {
++    background: #fee2e2;
++    color: #b91c1c;
++}
++
++button:hover {
++    transform: translateY(-2px);
++}
++
++.radio-group {
++    display: flex;
++    gap: 1rem;
++}
++
++.result-card {
++    margin-top: 1.5rem;
++    padding: 1.25rem;
++    border-radius: 18px;
++    background: #f8fafc;
++    border: 1px solid #e2e8f0;
++    color: var(--text);
++}
++
++.error {
++    margin-top: 1rem;
++    color: #b91c1c;
++}
++
++.food-search {
++    display: flex;
++    gap: 0.5rem;
++    margin-top: 1.5rem;
++}
++
++#progress-table {
++    width: 100%;
++    border-collapse: collapse;
++    margin-top: 1.5rem;
++}
++
++#progress-table th, #progress-table td {
++    padding: 0.75rem 0.5rem;
++    border-bottom: 1px solid #e2e8f0;
++    text-align: left;
++}
++
++.premium-guides .guide-grid {
++    display: grid;
++    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
++    gap: 1.5rem;
++    margin-top: 1.5rem;
++}
++
++.guide-card {
++    background: var(--white);
++    padding: 1.5rem;
++    border-radius: 20px;
++    box-shadow: var(--shadow);
++    display: flex;
++    flex-direction: column;
++    gap: 0.8rem;
++}
++
++.premium-slot {
++    margin-top: 1.2rem;
++}
++
++.upsell-box {
++    background: var(--white);
++    border: 1px solid #dbeafe;
++    border-radius: 18px;
++    padding: 1.25rem;
++    box-shadow: var(--shadow);
++}
++
++.upsell-box h4 {
++    margin-bottom: 0.4rem;
++}
++
++.upsell-box p {
++    color: var(--muted);
++    margin-bottom: 0.8rem;
++}
++
++.upsell-box .primary {
++    width: 100%;
++}
++
++.modal {
++    position: fixed;
++    inset: 0;
++    display: none;
++    justify-content: center;
++    align-items: center;
++    background: rgba(15, 23, 42, 0.6);
++    padding: 1rem;
++    z-index: 50;
++}
++
++.modal.show {
++    display: flex;
++}
++
++.modal-content {
++    background: var(--white);
++    border-radius: 24px;
++    padding: 2rem;
++    width: min(600px, 90vw);
++    max-height: 90vh;
++    overflow-y: auto;
++    box-shadow: var(--shadow);
++    position: relative;
++}
++
++.close-modal {
++    position: absolute;
++    top: 1rem;
++    right: 1rem;
++    background: none;
++    border: none;
++    font-size: 1.5rem;
++    cursor: pointer;
++}
++
++.modal h4 {
++    margin-bottom: 0.5rem;
++}
++
++.meal-plan {
++    display: grid;
++    gap: 1rem;
++    margin-top: 1rem;
++}
++
++.meal-card {
++    border: 1px solid #e2e8f0;
++    border-radius: 18px;
++    padding: 1rem;
++    background: #f8fafc;
++}
++
++.meal-card h5 {
++    margin-bottom: 0.5rem;
++}
++
++.save-plan {
++    margin-top: 1rem;
++    width: 100%;
++    background: var(--primary);
++    color: var(--white);
++    border: none;
++    border-radius: 12px;
++    padding: 0.8rem;
++    font-weight: 600;
++}
++
++@media (max-width: 900px) {
++    .navbar ul {
++        display: none;
++    }
++
++    .navbar ul.show {
++        display: flex;
++        flex-direction: column;
++        background: var(--white);
++        position: absolute;
++        top: 70px;
++        right: clamp(1rem, 5vw, 5rem);
++        padding: 1rem 2rem;
++        border-radius: 16px;
++        box-shadow: var(--shadow);
++    }
++
++    .menu-toggle {
++        display: block;
++    }
++
++    .food-search {
++        flex-direction: column;
++    }
++
++    .form-inline {
++        flex-direction: column;
++    }
++}
