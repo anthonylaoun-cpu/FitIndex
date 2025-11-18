@@ -1,0 +1,181 @@
+diff --git a/index.html b/index.html
+new file mode 100644
+index 0000000000000000000000000000000000000000..56366547ca03cbbec1a390517081b7b220d61409
+--- /dev/null
++++ b/index.html
+@@ -0,0 +1,175 @@
++<!DOCTYPE html>
++<html lang="en">
++<head>
++    <meta charset="UTF-8">
++    <meta name="viewport" content="width=device-width, initial-scale=1.0">
++    <title>Simple Fitness Calculator Hub</title>
++    <link rel="stylesheet" href="styles.css">
++</head>
++<body>
++    <header class="hero" id="hero">
++        <nav class="navbar">
++            <div class="logo">FitCalc Hub</div>
++            <ul>
++                <li><a href="#macro">Macros</a></li>
++                <li><a href="#tdee">TDEE</a></li>
++                <li><a href="#food">Food DB</a></li>
++                <li><a href="#converter">Cooked → Raw</a></li>
++                <li><a href="#progress">Progress</a></li>
++                <li><a href="#premium">Premium Guides</a></li>
++            </ul>
++            <button class="menu-toggle" aria-label="Open navigation">☰</button>
++        </nav>
++        <div class="hero-content">
++            <p class="eyebrow">Health • Nutrition • Progress</p>
++            <h1>Simple Fitness Calculator Hub</h1>
++            <p class="subtitle">Quick tools to track your macros, calories, and progress.</p>
++            <button class="cta" data-scroll="#calculators">Start Calculating</button>
++        </div>
++    </header>
++
++    <main>
++        <section id="calculators" class="section">
++            <h2>Calculator Suite</h2>
++            <p class="section-lead">Everything you need to keep your nutrition on point.</p>
++        </section>
++
++        <section id="macro" class="section card">
++            <h3>Macro Calculator</h3>
++            <form id="macro-form" class="form-grid">
++                <div class="input-group">
++                    <label>Sex</label>
++                    <div class="radio-group">
++                        <label><input type="radio" name="macroSex" value="male" checked> Male</label>
++                        <label><input type="radio" name="macroSex" value="female"> Female</label>
++                    </div>
++                </div>
++                <label>Age <input type="number" id="macro-age" min="1" required></label>
++                <label>Height (cm) <input type="number" id="macro-height" min="1" required></label>
++                <label>Weight (kg) <input type="number" id="macro-weight" min="1" step="0.1" required></label>
++                <label>Activity Level
++                    <select id="macro-activity">
++                        <option value="1.2">Sedentary</option>
++                        <option value="1.375">Lightly Active</option>
++                        <option value="1.55">Moderately Active</option>
++                        <option value="1.725">Very Active</option>
++                    </select>
++                </label>
++                <label>Goal
++                    <select id="macro-goal">
++                        <option value="cut">Cut</option>
++                        <option value="maintain" selected>Maintain</option>
++                        <option value="bulk">Bulk</option>
++                    </select>
++                </label>
++                <button type="submit" class="primary">Calculate</button>
++            </form>
++            <div id="macro-error" class="error"></div>
++            <div id="macro-result" class="result-card"></div>
++            <div id="macro-upsell" class="premium-slot"></div>
++        </section>
++
++        <section id="tdee" class="section card">
++            <h3>TDEE Calculator</h3>
++            <form id="tdee-form" class="form-grid">
++                <div class="input-group">
++                    <label>Sex</label>
++                    <div class="radio-group">
++                        <label><input type="radio" name="tdeeSex" value="male" checked> Male</label>
++                        <label><input type="radio" name="tdeeSex" value="female"> Female</label>
++                    </div>
++                </div>
++                <label>Age <input type="number" id="tdee-age" min="1" required></label>
++                <label>Height (cm) <input type="number" id="tdee-height" min="1" required></label>
++                <label>Weight (kg) <input type="number" id="tdee-weight" min="1" step="0.1" required></label>
++                <label>Activity Level
++                    <select id="tdee-activity">
++                        <option value="1.2">Sedentary</option>
++                        <option value="1.375">Lightly Active</option>
++                        <option value="1.55">Moderately Active</option>
++                        <option value="1.725">Very Active</option>
++                    </select>
++                </label>
++                <button type="submit" class="primary">Calculate</button>
++            </form>
++            <div id="tdee-error" class="error"></div>
++            <div id="tdee-result" class="result-card"></div>
++            <div id="tdee-upsell" class="premium-slot"></div>
++        </section>
++
++        <section id="food" class="section card">
++            <h3>How many calories in ...?</h3>
++            <div class="food-search">
++                <input type="text" id="food-input" placeholder="e.g., chicken breast">
++                <button id="food-search" class="secondary">Search</button>
++            </div>
++            <div id="food-result" class="result-card"></div>
++        </section>
++
++        <section id="converter" class="section card">
++            <h3>Cooked → Raw Converter</h3>
++            <form id="converter-form" class="form-inline">
++                <label>Food Type
++                    <select id="food-type">
++                        <option value="chicken">Chicken Breast</option>
++                        <option value="rice">Rice</option>
++                        <option value="pasta">Pasta</option>
++                    </select>
++                </label>
++                <label>Cooked Weight (g)
++                    <input type="number" id="cooked-weight" min="1" required>
++                </label>
++                <button type="submit" class="primary">Convert</button>
++            </form>
++            <div id="converter-result" class="result-card"></div>
++        </section>
++
++        <section id="progress" class="section card">
++            <h3>Progress Tracker</h3>
++            <form id="progress-form" class="form-inline">
++                <label>Date <input type="date" id="progress-date" required></label>
++                <label>Weight (kg) <input type="number" id="progress-weight" min="1" step="0.1" required></label>
++                <label>Notes <input type="text" id="progress-notes" placeholder="Optional"></label>
++                <button type="submit" class="primary">Add Entry</button>
++            </form>
++            <button id="clear-progress" class="danger">Clear all data</button>
++            <table id="progress-table">
++                <thead>
++                    <tr><th>Date</th><th>Weight (kg)</th><th>Notes</th></tr>
++                </thead>
++                <tbody></tbody>
++            </table>
++        </section>
++
++        <section id="premium" class="section premium-guides">
++            <h3>Premium Cutting & Bulking Guides</h3>
++            <div class="guide-grid">
++                <article class="guide-card">
++                    <h4>Lean Cutting Guide</h4>
++                    <p>Dial in your deficit, keep muscle, and stay energized with structured routines.</p>
++                    <button class="secondary guide-btn">Get Guide</button>
++                </article>
++                <article class="guide-card">
++                    <h4>Lean Bulking Guide</h4>
++                    <p>Add quality size with macro targets, sample meal plans, and workout splits.</p>
++                    <button class="secondary guide-btn">Get Guide</button>
++                </article>
++                <article class="guide-card">
++                    <h4>Recomp Guide</h4>
++                    <p>Rebuild, recomp, and stay athletic with hybrid training and nutrition strategies.</p>
++                    <button class="secondary guide-btn">Get Guide</button>
++                </article>
++            </div>
++        </section>
++    </main>
++
++    <div id="premium-modal" class="modal" aria-hidden="true">
++        <div class="modal-content">
++            <button class="close-modal" aria-label="Close modal">&times;</button>
++            <div id="modal-body"></div>
++        </div>
++    </div>
++
++    <script src="script.js" defer></script>
++</body>
++</html>
